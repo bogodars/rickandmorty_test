@@ -13,7 +13,7 @@ function Characters() {
     setLoading(true);
     try {
       fetch(url)
-        .then(response => return response.json())
+        .then(response => response.json())
         .then((data) => {
           console.log(data);
           setCharacters(data.results);
