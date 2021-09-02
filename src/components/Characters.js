@@ -6,20 +6,17 @@ function Characters() {
   const [loading, setLoading] = useState(true);
   
   
-  
+  let url = 'https://rickandmortyapi.com/api/character';
 
   
   useEffect(() => {
     setLoading(true);
     try {
-      fetch('https://rickandmortyapi.com/api/character',   {mode: 'no-cors'}, {
-  method: "GET",
-  headers: {"Content-type": "application/json;charset=UTF-8"}
-})
-        .then((response) => response.json())
-        .then((json) => {
-          console.log(json);
-          setCharacters(json.results);
+      fetch(url)
+        .then(response => return response.json())
+        .then((data) => {
+          console.log(data);
+          setCharacters(data.results);
           setLoading(false);
         });
     } catch (e) {
