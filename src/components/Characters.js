@@ -4,11 +4,18 @@ import Title from '../img/title.png';
 function Characters() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
+  
+  
+  
 
+  
   useEffect(() => {
     setLoading(true);
     try {
-      fetch('https://rickandmortyapi.com/api/character',  {mode: 'no-cors'})
+      fetch('https://rickandmortyapi.com/api/character',   {mode: 'no-cors'}, {
+  method: "GET",
+  headers: {"Content-type": "application/json;charset=UTF-8"}
+})
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
