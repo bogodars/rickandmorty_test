@@ -8,7 +8,7 @@ function Characters() {
   useEffect(() => {
     setLoading(true);
     try {
-      fetch('https://rickandmortyapi.com/api/character',  {mode: 'no-cors'})
+      fetch('https://rickandmortyapi.com/api/character',  {mode: 'cors'})
         .then((response) => response.json())
         .then((json) => {
           console.log(json);
