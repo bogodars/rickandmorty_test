@@ -5,14 +5,15 @@ function Characters() {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
   
-  
-  let url = 'https://rickandmortyapi.com/api/character';
+ 
 
   
   useEffect(() => {
     setLoading(true);
+    
+  
     try {
-      fetch(url)
+      fetch('https://rickandmortyapi.com/api/character')
         .then(response => response.json())
         .then((data) => {
           console.log(data);
